@@ -25,7 +25,7 @@ it("constructor sets position and default values for mode and generatorWatts", f
 
 //Test 8
 it("response returned by receiveMessage contains name of message", function(){
-  let receiveMessage = new Message('That this passes means you are stupid!');
+  let receiveMessage = new Message('That this passes is nonsense!');
   expect(receiveMessage.name).toEqual('New message!');
 });
 
