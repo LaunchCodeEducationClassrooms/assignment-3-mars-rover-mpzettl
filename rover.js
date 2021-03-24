@@ -6,6 +6,11 @@ class Rover {
     this.generatorWatts = 110;
   }
    // Write code here!
+  receiveMessage(message){
+    //this.message = message.name;
+
+
+   }
 }
 
 module.exports = Rover;

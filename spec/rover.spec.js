@@ -23,10 +23,13 @@ it("constructor sets position and default values for mode and generatorWatts", f
     expect(rover.generatorWatts).toEqual(110);
   });
 
-/*Test 8
-"response returned by receiveMessage contains name of message"
+//Test 8
+it("response returned by receiveMessage contains name of message", function(){
+  let receiveMessage = new Message('That this passes means you are stupid!');
+  expect(receiveMessage.name).toEqual('New message!');
+});
 
-Test 9
+/*Test 9
 "response returned by receiveMessage includes two results if two commands are sent in the message"
 
 Test 10
@@ -51,12 +54,12 @@ A MOVE command will update the rover's position with the position value in the c
 
 
 });
-/*let response = rover.receiveMessage(message);
-    expect(response.message).toEqual('TA power');
-    expect(response.results[0].completed).toBeTrue;
-    expect(response.results[1].roverStatus.position).toEqual(4321);
-    expect(response.results[2].completed).toBeTrue;
-    expect(response.results[3].completed).toBeFalse;
-    expect(response.results[4].roverStatus.position).toEqual(4321);
-    expect(response.results[4].roverStatus.mode).toEqual('LOW_POWER');
-    expect(response.results[4].roverStatus.generatorWatts).toEqual(110);*/
+/*let response = rover.receiveMessage(message);8
+    expect(response.message).toEqual('TA power');8
+    expect(response.results[0].completed).toBeTrue;9
+    expect(response.results[1].roverStatus.position).toEqual(4321);10
+    expect(response.results[2].completed).toBeTrue;9
+    expect(response.results[3].completed).toBeFalse;10
+    expect(response.results[4].roverStatus.position).toEqual(4321);11
+    expect(response.results[4].roverStatus.mode).toEqual('LOW_POWER');12
+    expect(response.results[4].roverStatus.generatorWatts).toEqual(110);13*/
