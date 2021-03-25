@@ -39,5 +39,4 @@ describe("GRADING TEST: ", function() {
     expect(response.results[4].roverStatus.generatorWatts).toEqual(110);
    });
 
-});
-*/
+});*/

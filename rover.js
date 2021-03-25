@@ -4,20 +4,17 @@ class Rover {
     this.position = 87382098;
     this.mode = 'NORMAL';
     this.generatorWatts = 110;
+    this.roverStatus = [mode,generatorWatts, position]
   }
    // Write code here!
   receiveMessage(message){
-    //this.message = message.name;
-
-
+    this.message = message.name;
+    let results = [this.message.commands];//
+    //console.log( message, results)
+    return (message, results);
    }
 }
 
 module.exports = Rover;
-/*let position = new Rover(87382098);
-    expect(Rover.position).toEqual(87382098);
-  let mode = new Rover('NORMAL');
-    expect(Rover.mode).toEqual('NORMAL');
-  let generatorWatts = new Rover(110);
-    expect(Rover.generatorWatts).toEqual(110);*/
+
   
