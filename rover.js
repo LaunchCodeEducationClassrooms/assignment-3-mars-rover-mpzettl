@@ -4,11 +4,12 @@ class Rover {
     this.position = 87382098;
     this.mode = 'NORMAL';
     this.generatorWatts = 110;
-    this.roverStatus = [mode,generatorWatts, position]
+    this.roverStatus = [this.mode,this.generatorWatts, this.position]
   }
    // Write code here!
   receiveMessage(message){
     this.message = message.name;
+    
     let results = [this.message.commands];//
     //console.log( message, results)
     return (message, results);

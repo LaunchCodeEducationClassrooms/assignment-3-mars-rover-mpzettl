@@ -41,15 +41,17 @@ it("response returned by receiveMessage includes two results if two commands are
   expect(rover.mode = 'LOW_POWER', rover.generatorWatts = 110, rover.position = 98382)
   console.log(response);
 });
-/*
-Test 10
+
+//Test 10
 it("responds correctly to status check command", function(){
+  let response = rover.receiveMessage(message);
   let receiveMessage = new Message(['MOVE', 25], ['STATUS_CHECK']);expect(response.results[0].roverStatus.position).toEqual(87382123);expect(response.results[1].completed).toBeTrue;
 
-}
+});
 
-For the STATUS_CHECK command, receiveMessage(message).results includes a roverStatus object describing the current state of the rover object --- mode, generatorWatts, and position. The test should check each of these for accuracy.
-See the Rover Command Types table for more details.
+//For the STATUS_CHECK command, receiveMessage(message).results includes a roverStatus object describing the current state of the rover object --- mode, generatorWatts, and position. The test should check each of these for accuracy.
+//See the Rover Command Types table for more details.
+/*
 Test 11
 "responds correctly to mode change command".
 
