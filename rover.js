@@ -4,17 +4,20 @@ class Rover {
     this.position = 87382098;
     this.mode = 'NORMAL';
     this.generatorWatts = 110;
-    this.roverStatus = [this.mode,this.generatorWatts, this.position]
+    this.roverStatus ={mode,generatorWatts, position};
   }
    // Write code here!
   receiveMessage(message){
-    this.message = message.name;
-    
-    let results = [this.message.commands];//
-    //console.log( message, results)
-    return (message, results);
+    this.message = [message.name, message.commands];
+    if (message.commands === 'STATUS_CHECK'){
+      this.results = [message.commands], roverStatus;
+    }else{
+      this.results = [this.message.commands];
+    }
+    console.log(this.rover);
+    return(message);
    }
-}
+};
 
 module.exports = Rover;
 

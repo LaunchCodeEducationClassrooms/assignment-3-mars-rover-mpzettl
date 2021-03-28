@@ -36,22 +36,29 @@ it("response returned by receiveMessage includes two results if two commands are
   console.log(commands);
   let rover = new Rover(98382); 
   let response = rover.receiveMessage(message);
-  console.log(response);
+  console.log(1, response, rover.mode,rover.generatorWatts, rover.position);
   
   expect(rover.mode = 'LOW_POWER', rover.generatorWatts = 110, rover.position = 98382)
-  console.log(response);
+  console.log(2, rover.mode, rover.generatorWatts, rover.position);
 });
 
 //Test 10
 it("responds correctly to status check command", function(){
+  let commands = [new Command('STATUS_CHECK')];
+  let message = new Message('Next Message 002', commands);
+  console.log(commands);
+  let rover = new Rover(87382123, 'NORMAL',110);
   let response = rover.receiveMessage(message);
-  let receiveMessage = new Message(['MOVE', 25], ['STATUS_CHECK']);expect(response.results[0].roverStatus.position).toEqual(87382123);expect(response.results[1].completed).toBeTrue;
+  
+  console.log(3, response, commands, rover);
 
+  expect(response.results[0].rover.position).toEqual(87382123);expect(response.results[1].completed).toBeTrue;
+  console.log(3, rover.mode, rover.generatorWatts, rover.position);
 });
-
+/*
 //For the STATUS_CHECK command, receiveMessage(message).results includes a roverStatus object describing the current state of the rover object --- mode, generatorWatts, and position. The test should check each of these for accuracy.
 //See the Rover Command Types table for more details.
-/*
+
 Test 11
 "responds correctly to mode change command".
 
@@ -70,7 +77,7 @@ A MOVE command will update the rover's position with the position value in the c
 
 });
 /*let response = rover.receiveMessage(message);8
-    expect(response.message).toEqual('TA power');8
+    expect(response.message).toEqual('TA power');9
     expect(response.results[0].completed).toBeTrue;9
     expect(response.results[1].roverStatus.position).toEqual(4321);9
     expect(response.results[2].completed).toBeTrue;9
