@@ -14,7 +14,7 @@ class Rover {
     }else{
       this.results = [this.message.commands];
     }
-    console.log(this.rover);
+    console.log(7,this.message);
     return(message);
    }
 };

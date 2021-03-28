@@ -50,10 +50,12 @@ it("responds correctly to status check command", function(){
   let rover = new Rover(87382123, 'NORMAL',110);
   let response = rover.receiveMessage(message);
   
-  console.log(3, response, commands, rover);
+  console.log(3, response);
+  console.log(4, commands); 
+  console.log(5,rover);
 
   expect(response.results[0].rover.position).toEqual(87382123);expect(response.results[1].completed).toBeTrue;
-  console.log(3, rover.mode, rover.generatorWatts, rover.position);
+  console.log(6, rover.mode, rover.generatorWatts, rover.position);
 });
 /*
 //For the STATUS_CHECK command, receiveMessage(message).results includes a roverStatus object describing the current state of the rover object --- mode, generatorWatts, and position. The test should check each of these for accuracy.
