@@ -46,15 +46,17 @@ it("response returned by receiveMessage includes two results if two commands are
 it("responds correctly to status check command", function(){
   let commands = [new Command('STATUS_CHECK')];
   let message = new Message('Next Message 002', commands);
-  console.log(commands);
+  console.log(2.5, commands);
   let rover = new Rover(87382123, 'NORMAL',110);
+  console.log(2.7, rover);
   let response = rover.receiveMessage(message);
   
   console.log(3, response);
   console.log(4, commands); 
   console.log(5,rover);
 
-  expect(response.results[0].rover.position).toEqual(87382123);expect(response.results[1].completed).toBeTrue;
+  expect(response.results[0].rover.position).toEqual(87382123);
+  expect(response.results[0].completed).toBeTrue;
   console.log(6, rover.mode, rover.generatorWatts, rover.position);
 });
 /*
