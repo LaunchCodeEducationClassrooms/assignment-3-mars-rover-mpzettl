@@ -75,7 +75,9 @@ it("11 responds correctly to mode change command", function(){
   let commands = [new Command('MODE_CHANGE', 'LOW_POWER')];
   let message = new Message('Test mode change command to completed-true', commands);
   let rover = new Rover(87382098);
+  
   let response = rover.receiveMessage(message);
+  
   console.log(11, response);
   console.log(11.1, message);
   console.log(11.11, response.results.completed)

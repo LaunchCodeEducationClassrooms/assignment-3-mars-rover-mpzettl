@@ -34,10 +34,12 @@ class Rover {
       }console.log('9***Completed', message.commands[command],completed)
 
       this.results = {completed, roverStatus};
-      console.log(90, this.results);
-      return completed;
+      
+      return completed, this.results;
     };
-    
+    console.log(90, this.results, this.results.completed);
+    this.results = {completed, roverStatus};
+    console.log(90.1, completed);
     //let command;//index identifier
     //
     /*for (command in this.message){
@@ -53,6 +55,7 @@ class Rover {
       console.log('rm6', this.message, this.results);
     }*/
     //console.log(10, message, results);
+    console.log(91, message, results)
     return(message, results);
    }//}//}
 };
