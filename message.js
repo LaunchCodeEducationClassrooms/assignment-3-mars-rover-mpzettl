@@ -1,7 +1,7 @@
 class Message {
    // Write code here!
    constructor(name, commands){
-     this.name = 'New message!';
+     this.name = name;//'New message!';
      if (!name) {
        throw Error('Message name required.');
      }

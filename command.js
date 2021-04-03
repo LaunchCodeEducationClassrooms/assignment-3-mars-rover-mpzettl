@@ -7,7 +7,9 @@ class Command {
        throw Error("Command type required.");
      }
      this.value = value;//('MOVE', 20);
-   
+
+    
+     //this.completed = completed;
       
  }};
  
