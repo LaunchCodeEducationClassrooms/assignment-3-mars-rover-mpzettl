@@ -77,22 +77,31 @@ it("11 responds correctly to mode change command", function(){
   let rover = new Rover(87382098);
   
   let response = rover.receiveMessage(message);
-  
+  console.log(11.0, response.completed);
   console.log(11, response);
   console.log(11.1, message);
-  console.log(11.11, response.results.completed)
+  console.log(11.11, response.completed)
   console.log(11.2, rover.mode);
-  expect(response.results.completed).toBeTrue;
+  expect(response.completed).toBeTrue;
 });
 
 //The test should check the completed property and rover mode for accuracy.
 //The rover has two modes that can be passed a values to a mode change command, 'LOW_POWER' and 'NORMAL'.
-/*
-Test 12
-"responds with false completed value when attempting to move in LOW_POWER mode".
 
-The test should check the completed property for accuracy and confirm that the rover position did not change.
-Use the Rover Modes table for guidance on how to handle move commands in different modes.
+//Test 12
+it("responds with false completed value when attempting to move in LOW_POWER mode", function(){
+ let commands = [new Command('MOVE', 90000000)];
+  let message = new Message('Test mode change to "LOW_POWER" command to completed-false', commands);
+  let rover = new Rover(898989);
+  
+  let response = rover.receiveMessage(message);
+
+ expect.response.completed.toBeFalse;
+});
+
+/*The test should check the completed property for accuracy and confirm that the rover position did not change.
+Use the Rover Modes table for guidance on how to handle move commands in different modes.*/
+/*
 Test 13
 "responds with position for move command".
 
