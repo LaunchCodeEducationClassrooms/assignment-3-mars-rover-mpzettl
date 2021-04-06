@@ -39,7 +39,7 @@ it("9 response returned by receiveMessage includes two results if two commands a
   //console.log(commands);
   let rover = new Rover(98382); 
   let response = rover.receiveMessage(message);
-  console.log(9.1, response, rover.mode,rover.generatorWatts, rover.position);
+  //console.log(9.1, response, rover.mode,rover.generatorWatts, rover.position);
   
   expect(rover.mode = 'LOW_POWER', rover.generatorWatts = 110, rover.position = 98382)
   //console.log(9.2, rover.mode, rover.generatorWatts, rover.position);
@@ -88,7 +88,7 @@ it("11 responds correctly to mode change command", function(){
   //console.log(11.5, rover.mode);
 
   expect(response.completed).toBeTrue;
-  console.log(11,response.completed);
+  //console.log(11,response.completed);
 });
 
 //The test should check the completed property and rover mode for accuracy.
@@ -126,7 +126,7 @@ let rover = new Rover(89898989);
   
 
   let response = rover.receiveMessage(message);
-  console.log(13, message, rover.position, rover.mode);
+  //console.log(13, message, rover.position, rover.mode);
   //console.log(12.1, message.commands, response, rover, response.completed);
   
  expect(response.position).toBe(50000000)
