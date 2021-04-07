@@ -1,23 +1,23 @@
 class Rover {
-  constructor(position,mode,generatorWatts){
-    
+  constructor(position){
     //this.position =87382098;
     this.mode = 'NORMAL';
     this.generatorWatts = 110;
     this.position = position;
+  
   };
    // Write code here!
   
   receiveMessage(message){
     
+    this.message = message.name;
+    
     let completed = Boolean();
     let rover = new Rover();
     let roverStatus = rover;
     
-
-    
     let results = {completed, roverStatus};
-    
+    let response = {message, results}
     let command;
     
     for (command in message.commands){
@@ -61,7 +61,9 @@ class Rover {
     
    }
    //console.log(90.1, results, results.completed);
-   return(message, results, rover);
+   
+   console.log(1, "messageName", message.name,"\n",2, "results", results,"\n", 3, "rover", rover);
+   return(response, rover);
   };
 };
 
